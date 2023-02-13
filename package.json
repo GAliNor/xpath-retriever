@@ -1,0 +1,26 @@
+{
+  "name": "xpath-retriever",
+  "version": "0.0.1",
+  "description": "JavaScript utility package that let you retrieve the xpath of a given DOM element",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GAliNor/xpath-retriever.git"
+  },
+  "keywords": [
+    "xpath",
+    "retrieve",
+    "javascript",
+    "dom",
+    "html"
+  ],
+  "author": "GAliNor",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/GAliNor/xpath-retriever/issues"
+  },
+  "homepage": "https://github.com/GAliNor/xpath-retriever#readme"
+}
