@@ -5,17 +5,26 @@
  * @returns { string } - xpath value
  */
 export const retrieveXPath = (domElement, absolute=false) => {
-    if(!absolute && domElement.id.length) {
-        return `//*[@id='${domElement.id}']`;
+    try{
+        if(typeof domElement !== 'object')
+            throw new Exception('The argument given isn\'t an HTML element object');
+        if(typeof absolute !== 'boolean')
+            throw new Exception('The absolute parameter should be a boolean value');
+
+        if(!absolute && domElement.id.length) {
+            return `//*[@id='${domElement.id}']`;
+        }
+        if (!absolute && document.getElementsByTagName(domElement.tagName).length === 1) {
+            return `//${domElement.tagName.toLowerCase()}`;
+        }
+        if(absolute && domElement.tagName.toLowerCase() === 'html') {
+            return '/html'
+        }
+        const nodesInSameLevel = Array.from(domElement.parentNode.childNodes);
+        const nodesInSameLevelWithSameTagName = nodesInSameLevel.filter(element => element.tagName === domElement.tagName);
+        const domElementLevelPosition = nodesInSameLevelWithSameTagName.indexOf(domElement);
+        return `${retrieveXPath(domElement.parentNode, absolute)}/${domElement.tagName.toLowerCase()}${`[${domElementLevelPosition + 1}]`}`;
+    } catch (err) {
+        throw new Exception(err);
     }
-    if (!absolute && document.getElementsByTagName(domElement.tagName).length === 1) {
-        return `//${domElement.tagName.toLowerCase()}`;
-    }
-    if(absolute && domElement.tagName.toLowerCase() === 'html') {
-        return '/html'
-    }
-    const nodesInSameLevel = Array.from(domElement.parentNode.childNodes);
-    const nodesInSameLevelWithSameTagName = nodesInSameLevel.filter(element => element.tagName === domElement.tagName);
-    const domElementLevelPosition = nodesInSameLevelWithSameTagName.indexOf(domElement);
-    return `${retrieveXPath(domElement.parentNode, absolute)}/${domElement.tagName.toLowerCase()}${`[${domElementLevelPosition + 1}]`}`;
 }
