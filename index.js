@@ -18,7 +18,7 @@ export const retrieveXPath = (domElement, absolute=false) => {
             return `//${domElement.tagName.toLowerCase()}`;
         }
         if(absolute && domElement.tagName.toLowerCase() === 'html') {
-            return '/html'
+            return '/html';
         }
         const nodesInSameLevel = Array.from(domElement.parentNode.childNodes);
         const nodesInSameLevelWithSameTagName = nodesInSameLevel.filter(element => element.tagName === domElement.tagName);
