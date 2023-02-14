@@ -7,9 +7,9 @@
 export const retrieveXPath = (domElement, absolute=false) => {
     try{
         if(typeof domElement !== 'object')
-            throw new Exception('The argument given isn\'t an HTML element object');
+            throw 'The argument given isn\'t an HTML element object';
         if(typeof absolute !== 'boolean')
-            throw new Exception('The absolute parameter should be a boolean value');
+            throw 'The absolute parameter should be a boolean value';
 
         if(!absolute && domElement.id.length) {
             return `//*[@id='${domElement.id}']`;
@@ -25,6 +25,6 @@ export const retrieveXPath = (domElement, absolute=false) => {
         const domElementLevelPosition = nodesInSameLevelWithSameTagName.indexOf(domElement);
         return `${retrieveXPath(domElement.parentNode, absolute)}/${domElement.tagName.toLowerCase()}${`[${domElementLevelPosition + 1}]`}`;
     } catch (err) {
-        throw new Exception(err);
+        throw err;
     }
 }
