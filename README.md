@@ -5,8 +5,6 @@
 
 xpath generator is a simple function that helps you generate the xpath of a given html element.
 Written in vanilla Js to be supported by all front-end frameworks.
-Initial solution to be found in this repository : https://github.com/GAliNor/Javascript-xpath-generator
-
   
 
 # Table of contents
@@ -28,6 +26,9 @@ Initial solution to be found in this repository : https://github.com/GAliNor/Jav
   
 
 - [Contribution](#contribution)
+
+
+- [Acknowledgments](#acknowledgments)
 
 
 
@@ -141,3 +142,17 @@ Use cases example :
 Every improvement of the package is welcome, just fork the project make the necessary upgrades and create a pull request.
 
 If you want to contact me (@GAliNor) here is a [link](https://www.linkedin.com/in/ali-guedda/) to my linkedin profile
+
+
+# Acknowledgments
+
+Many thanks to :
+
+ - [@abiari](https://github.com/abiari)
+ - [@hmellahi](https://github.com/hmellahi)
+ - [@karimerrahli](https://github.com/karimerrahli)
+
+for the reviews and advices
+
+Several months ago I got inspired by a code snippet posted by a developer that I couldn't find again.
+Special thanks to him, if I find you my friend it would be my pleasure to give the credits you deserve.
