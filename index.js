@@ -6,7 +6,7 @@
  */
 export const retrieveXPath = (domElement, absolute=false) => {
     try{
-        if(typeof domElement !== 'object')
+        if(typeof domElement !== 'object' || domElement === document)
             throw 'The argument given isn\'t an HTML element object';
         if(typeof absolute !== 'boolean')
             throw 'The absolute parameter should be a boolean value';
