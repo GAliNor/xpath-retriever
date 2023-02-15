@@ -1,9 +1,9 @@
 
-# XPATH function generator
+# XPATH Retriever
 
   
 
-xpath generator is a simple function that helps you generate the xpath of a given html element.
+xpath retriever is a simple function that helps you generate the xpath of a given html element.
 Written in vanilla Js to be supported by all front-end frameworks.
   
 
@@ -46,7 +46,7 @@ First import the utility function
 
     import { retrieveXPath } from  'xpath-retriever';
 
-Using the retrieveXPath function add a click event to the document and display the data :
+Using the retrieveXPath function add a click event listener to the document and display the data :
 
     const displayXPathValue = (e) => {
 	    console.log('relative xpath', retrieveXPath(e.target));
@@ -78,7 +78,7 @@ Then after testing the function, remove the click event listener created before 
 |  Parameter | Type | Required | Description |
 |--|--|--|--|
 | domElement | HTML Element | required | DOM element where the retrieved xpath should lead |
-| absolute | boolean | isOptional | by default false, if true returns absolute xpath else returns relative one
+| absolute | boolean | optional | by default false, if true returns absolute xpath else returns relative one
 
 
 
@@ -107,11 +107,11 @@ For each element it will:
 
   
 
-* Lookup it's id
+* Look up its id
 
   
 
-* If it doesn't possess an id, it will check if there is no similar tag in the DOM
+* If it doesn't possess an id, it will check if there is no other similar tag in the DOM
 
   
 
@@ -130,16 +130,16 @@ Use cases example :
 
   
 
-- Flag an element to be evaluate every time a page will be load
+- Flag an element to be evaluated every time a page will be load
 
 - Prepare a data extraction
 
-- Generate quickly xPath expression for a UI testing automation
+- Generate xPath expression quickly for a UI testing automation
 
 
 # Contribution
 
-Every improvement of the package is welcome, just fork the project make the necessary upgrades and create a pull request.
+Every improvement of the package is welcome, just fork the project make the necessary changes and create a pull request.
 
 If you want to contact me (@GAliNor) here is a [link](https://www.linkedin.com/in/ali-guedda/) to my linkedin profile
 
@@ -152,7 +152,7 @@ Many thanks to :
  - [@hmellahi](https://github.com/hmellahi)
  - [@karimerrahli](https://github.com/karimerrahli)
 
-for the reviews and advices
+for the reviews and advice
 
 Several months ago I got inspired by a code snippet posted by a developer that I couldn't find again.
-Special thanks to him, if I find you my friend it would be my pleasure to give the credits you deserve.
+Special thanks to him, if I find you my friend it would be my pleasure to give you the credits you deserve.

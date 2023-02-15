@@ -1,6 +1,6 @@
 {
   "name": "xpath-retriever",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "JavaScript utility package that let you retrieve the xpath of a given DOM element",
   "main": "index.js",
   "scripts": {
